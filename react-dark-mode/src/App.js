@@ -7,9 +7,13 @@ import { useState } from 'react';
 function App() {
   const [theme, setTheme] = useState('light-mode')
 
+  const clickData = (data) => {
+    setTheme(data ? 'light-mode' : 'dark-mode')
+  }
+
   return (
     <div>
-      <Header />
+      <Header clickData={clickData}/>
       <Main theme={theme} />
       <Footer theme={theme} />
     </div>
